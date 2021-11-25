@@ -1,7 +1,4 @@
-import type { NextPage } from "next";
-import React, { Fragment } from "react";
-import Hero from "../components/home-page/Hero";
-import FeaturedPosts from "../components/home-page/featured-posts";
+import AllPosts from "../../components/posts/all-posts";
 
 const dummyPosts = [
   {
@@ -38,13 +35,8 @@ const dummyPosts = [
   },
 ];
 
-const Home: NextPage = () => {
-  return (
-    <Fragment>
-      <Hero />
-      <FeaturedPosts posts={dummyPosts} />
-    </Fragment>
-  );
+const AllPostsPage = () => {
+  return <AllPosts posts={dummyPosts} />;
 };
 
-export default Home;
+export default AllPostsPage;
