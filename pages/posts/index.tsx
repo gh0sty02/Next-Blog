@@ -1,10 +1,10 @@
 import AllPosts from "../../components/posts/all-posts";
 import { getAllPosts } from "../../lib/posts-util";
-import { IData } from "../../interface/Post.interface";
+import { IPost } from "../../interface/Post.interface";
 import { FC, Fragment } from "react";
 import Head from "next/head";
 
-const AllPostsPage: FC<{ posts: IData[] }> = ({ posts }) => {
+const AllPostsPage: FC<{ posts: IPost[] }> = ({ posts }) => {
   return (
     <Fragment>
       <Head>

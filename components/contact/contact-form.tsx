@@ -60,7 +60,6 @@ const ContactForm = () => {
       await sendMessage({ name, email, message });
       setRequestStatus("success");
     } catch (err) {
-      console.log(typeof err);
       setRequestError("Something went wrong");
       setRequestStatus("error");
     }
@@ -119,7 +118,7 @@ const ContactForm = () => {
           <button>Send Message</button>
         </div>
       </form>
-      {console.log(notification)}
+
       {notification && (
         <Notification
           title={notification.title}

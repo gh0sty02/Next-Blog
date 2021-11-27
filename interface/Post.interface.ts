@@ -6,11 +6,3 @@ export interface IPost {
   slug?: string;
   content?: string;
 }
-
-export interface IData {
-  title: string;
-  date: string;
-  image: string;
-  excerpt: string;
-  isFeatured: boolean;
-}

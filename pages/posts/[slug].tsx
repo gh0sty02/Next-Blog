@@ -1,11 +1,14 @@
 import { GetStaticPropsContext } from "next";
 import { FC, Fragment } from "react";
 import PostContent from "../../components/posts/post-details/post-content";
-import { IData } from "../../interface/Post.interface";
+import { IPost } from "../../interface/Post.interface";
 import { getPostsFiles, getPostsData } from "../../lib/posts-util";
 import Head from "next/head";
 
-const PostDetailPage: FC<{ post: IData }> = ({ post }) => {
+const PostDetailPage: FC<{ post: IPost }> = ({ post }) => {
+  // if (!post) {
+  //   return <p>Loading..</p>;
+  // }
   return (
     <Fragment>
       <Head>
@@ -20,13 +23,17 @@ const PostDetailPage: FC<{ post: IData }> = ({ post }) => {
 export function getStaticProps(context: GetStaticPropsContext) {
   const { params } = context;
 
-  const slug: string = params!.slug;
+  const slug = params!.slug;
 
-  const postData = getPostsData(slug);
+  let postdata;
+
+  if (typeof slug === "string") {
+    postdata = getPostsData(slug);
+  }
 
   return {
     props: {
-      post: postData,
+      post: postdata,
     },
     revalidate: 600,
   };
@@ -37,7 +44,7 @@ export function getStaticPaths() {
   const slugs = postFilenames.map((filename) => filename.replace(/\.md$/, ""));
   return {
     paths: slugs.map((slug) => ({ params: { slug: slug } })),
-    fallback: true,
+    fallback: false,
   };
 }
 
