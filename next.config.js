@@ -7,4 +7,5 @@ module.exports = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  swcMinify: false,
 };
