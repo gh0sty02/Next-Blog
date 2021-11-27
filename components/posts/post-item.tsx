@@ -20,6 +20,7 @@ const PostItem: FC<IProps> = ({ post }) => {
   });
 
   const imagePath = `/images/posts/${slug}/${image}`;
+  console.log(imagePath);
 
   return (
     <li className={classes.post}>

@@ -4,6 +4,7 @@ export interface IPost {
   excerpt: string;
   date: string;
   slug?: string;
+  content?: string;
 }
 
 export interface IData {

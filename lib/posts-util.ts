@@ -5,7 +5,6 @@ import matter from "gray-matter";
 export const postsDirectory = path.join(process.cwd(), "posts");
 
 export const getPostsFiles = () => {
-  console.log(fs.readdirSync(postsDirectory));
   return fs.readdirSync(postsDirectory);
 };
 
