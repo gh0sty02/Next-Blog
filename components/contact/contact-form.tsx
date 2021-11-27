@@ -10,7 +10,7 @@ interface formdata {
 
 const ContactForm = () => {
   const [requestStatus, setRequestStatus] = useState<string | null>();
-  const [RequestError, setRequestError] = useState();
+  const [RequestError, setRequestError] = useState<string>();
 
   const emailRef = useRef<HTMLInputElement>(null);
   const nameRef = useRef<HTMLInputElement>(null);
@@ -61,7 +61,7 @@ const ContactForm = () => {
       setRequestStatus("success");
     } catch (err) {
       console.log(typeof err);
-      setRequestError(err);
+      setRequestError("Something went wrong");
       setRequestStatus("error");
     }
   };
