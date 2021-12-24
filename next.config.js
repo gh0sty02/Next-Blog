@@ -2,7 +2,7 @@
 module.exports = {
   reactStrictMode: true,
   env: {
-    MONGO_URI: "ihatelove99",
+    MONGO_URI: 
   },
   typescript: {
     ignoreBuildErrors: true,
